@@ -4,7 +4,7 @@ import { AssetFilterSchema, OriginalUrlSchema, DerivativeUrlSchema, isAllowedTra
 
 export async function assetRoutes(app: FastifyInstance): Promise<void> {
   // List assets for a project (with filters)
-  app.get<{ Params: { projectId: string } }>('/:assetId', { preHandler: [requireAuth] }, async (request, reply) => {
+  app.get<{ Params: { assetId: string } }>('/:assetId', { preHandler: [requireAuth] }, async (request, reply) => {
     const { supabase } = request;
     const { assetId } = request.params as { assetId: string };
 

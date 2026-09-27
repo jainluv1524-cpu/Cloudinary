@@ -60,7 +60,7 @@ export interface Project {
   org_id: string;
   name: string;
   sector: string | null;
-  geometry: GeoJSON.Polygon | null;
+  geometry: { type: 'Polygon'; coordinates: number[][][] } | null;
   start_date: string | null;
   end_date: string | null;
   config: ProjectConfig;

@@ -58,7 +58,7 @@ export function ProjectsPage() {
                     {project.sector && <span className="badge pass">{project.sector}</span>}
                   </div>
                   <div style={{ marginTop: 12, fontSize: 12, color: 'var(--text-muted)' }}>
-                    Created {new Date(project.created_at).toLocaleDateString()}
+                    Created {new Date(String(project.created_at)).toLocaleDateString()}
                   </div>
                 </div>
               </Link>

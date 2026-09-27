@@ -13,7 +13,6 @@ const app = Fastify({
       ? { target: 'pino-pretty' }
       : undefined,
   },
-  requestId: 'req-',
   genReqId: () => crypto.randomUUID(),
 });
 
@@ -51,7 +50,7 @@ app.get('/health/ready', async (_request, reply) => {
 });
 
 // Error handler
-app.setErrorHandler((error, request, reply) => {
+app.setErrorHandler((error: Error & { statusCode?: number }, request, reply) => {
   request.log.error(error);
 
   const statusCode = error.statusCode ?? 500;

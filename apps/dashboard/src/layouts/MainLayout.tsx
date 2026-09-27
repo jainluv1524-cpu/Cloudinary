@@ -5,6 +5,8 @@ const navItems = [
   { to: '/projects', icon: '📁', label: 'Projects' },
   { to: '/search', icon: '🔍', label: 'Search' },
   { to: '/map', icon: '🗺️', label: 'Map View' },
+  { to: '/integrity', icon: '🛡️', label: 'Integrity' },
+  { to: '/admin', icon: '⚙️', label: 'Admin' },
 ];
 
 export function MainLayout() {
